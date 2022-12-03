@@ -1,3 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Varela Round', sans-serif;
+
+    /* testa dps essas duas outras cores de bg do html */
+    /* background-color: #ccc4e6; */
+    /* background-color: #e5e3f2; */
+    background-color: #b5c5e6;
+  }
+}
