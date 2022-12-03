@@ -6,7 +6,7 @@ export const Footer = () => {
   return (
     <footer className="flex flex-col justify-center w-full gap-5 px-4 py-6 rounded-t-lg bg-b-700">
 
-      <FooterSection>
+      <div className="flex flex-col items-start justify-center gap-2">
         <p className="text-xl text-white ">Siga-nos</p>
         <div className="flex flex-row items-start gap-4">
           <a href="#">
@@ -22,27 +22,53 @@ export const Footer = () => {
             <TiktokLogo size={32} color="white" opacity={0.8} />
           </a>
         </div>
+      </div>
+
+      <FooterSection title="Contato">
+        <Anchor href="#">Sobre nós</Anchor>
+        <Anchor href="#">Nossos serviços</Anchor>
+        <Anchor href="#">Politicas de privacidade</Anchor>
       </FooterSection>
 
-      <FooterSection>
-        <p className="text-base leading-5 text-white text-opacity-90">
-          Contato
+      <FooterSection title="Endereço">
+        <p className="text-xs text-white opacity-75 leading-4">
+          CEP 29312-122<br />
+          Rua Godofredo Adiverci, 9081<br />
+          Bairro Monte Cristo<br />
+          Cachoeiro de Itapemirim/ES
         </p>
-        <div className="flex flex-col items-start gap-[2px]">
-          <p>Sobre nós</p>
-          <p>Nossos serviços</p>
-          <p>Politicas de privacidade</p>
-        </div>
       </FooterSection>
 
+      <FooterSection title="Ajuda">
+        <Anchor href="#">FAQ</Anchor>
+        <Anchor href="#">Entrega</Anchor>
+        <Anchor href="#">Devolução</Anchor>
+        <Anchor href="#">Acompanhr entrega</Anchor>
+        <Anchor href="#">Opções de pagamento</Anchor>
+      </FooterSection>
     </footer>
   );
 }
 
-const FooterSection = ({ children }) => {
+const FooterSection = ({ children, title }) => {
   return (
     <div className="flex flex-col items-start justify-center gap-2">
-      {children}
+      <p className="text-base leading-5 text-white text-opacity-90">
+        {title !== "" && title}
+      </p>
+      <div className="flex flex-col items-start gap-[2px]">
+        {children}
+      </div>
     </div>
+  );
+};
+
+const Anchor = ({ children, href }) => {
+  return (
+    <a href={href}>
+      <p className="text-xs text-white opacity-75 leading-4">
+        {children}
+      </p>
+    </a>
   );
 };
