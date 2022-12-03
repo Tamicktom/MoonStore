@@ -1,9 +1,11 @@
+import RoutesContainer from "./routes";
+
 function App() {
   return (
-    <div className="w-screen h-screen flex justify-center items-center">
-      <h1>Hello World</h1>
+    <div className="w-screen h-screen flex">
+      <RoutesContainer />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

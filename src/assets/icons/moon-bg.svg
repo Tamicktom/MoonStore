@@ -1,0 +1,15 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+	<title>moon-svg</title>
+	<defs>
+		<linearGradient id="g1" x1="0" y1="19" x2="200" y2="181" gradientUnits="userSpaceOnUse">
+			<stop offset="0" stop-color="#454777"/>
+			<stop offset="1" stop-color="#f3779b"/>
+		</linearGradient>
+	</defs>
+	<style>
+		.s0 { fill: url(#g1) } 
+		.s1 { fill: #ffffff } 
+	</style>
+	<path id="Shape 2" class="s0" d="m100 200c-55.3 0-100-44.7-100-100 0-55.3 44.7-100 100-100 55.3 0 100 44.7 100 100 0 55.3-44.7 100-100 100z"/>
+	<path id="Shape 1" fill-rule="evenodd" class="s1" d="m44.7 154.3c-16-16-23.6-37.2-22.6-58.1 2.7 8.7 7.5 16.7 14.4 23.6 23 23 60.3 23 83.3 0 23-23 23-60.3 0-83.3-6.9-6.9-14.9-11.7-23.6-14.4 20.9-1 42.1 6.6 58.1 22.6 30.3 30.3 30.3 79.3 0 109.6-30.3 30.3-79.3 30.3-109.6 0z"/>
+</svg>
