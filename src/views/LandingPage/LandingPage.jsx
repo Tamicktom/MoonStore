@@ -2,7 +2,7 @@ import Header from "./Header";
 
 const LandingPage = () => {
   return (
-    <div className="w-screen">
+    <div style={{width: '100%'}}>
       <Header />
     </div>
   );
