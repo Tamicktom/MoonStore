@@ -2,7 +2,11 @@ import { useEffect } from "react";
 
 const Categories = () => {
   return (
-    <div>
+    <div
+      style={{
+        background: 'rgba(255,0,0,0.5)',
+      }}
+    >
       a
     </div>
   )

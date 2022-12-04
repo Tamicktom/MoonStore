@@ -4,7 +4,7 @@ import { FacebookLogo, WhatsappLogo, InstagramLogo, TiktokLogo } from "phosphor-
 
 export const Footer = () => {
   return (
-    <footer className="flex flex-col items-start justify-center w-full gap-5 px-4 py-6 rounded-t-lg bg-b-700 lg:flex-row lg:items-center lg:px-32 lg:gap-20 lg:pb-20 lg:pt-8">
+    <footer className="flex flex-col items-start justify-center w-full gap-5 px-4 py-6 rounded-t-lg bg-b-700 lg:flex-row lg:items-center lg:px-32 lg:gap-20 lg:pb-20 lg:pt-8 mt-20">
 
       <div className="flex flex-col items-start justify-start gap-2 w-full max-w-[250px] lg:self-stretch">
         <p className="text-xl text-white">Siga-nos</p>

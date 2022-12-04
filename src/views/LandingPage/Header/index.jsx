@@ -4,7 +4,7 @@ import style from "./style.module.css";
 
 const Header = () => {
   return (
-    <div>
+    <div className="absolute z-[-1] w-full">
       <img src={bg_header} className={`${style.headerImage} h-[50rem] w-full`} />
     </div>
   );
