@@ -151,7 +151,10 @@ const ShareLove = () => {
   return (
     <div className="flex flex-row items-center justify-end gap-2">
       <ShareNetwork size={32} className="text-b-500" />
-      <Heart size={32} className="text-b-500" />
+      <Heart
+        size={32}
+        className="text-b-500"
+      />
     </div>
   )
 }
