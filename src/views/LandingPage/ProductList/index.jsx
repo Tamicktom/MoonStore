@@ -1,5 +1,7 @@
-import { useEffect, useState } from "react";
+//* Libraries imports
 import OwlCarousel from "react-owl-carousel";
+
+//* Components Imports
 import ProductCard from "../../../components/ProductCard/ProductCard";
 
 const responsive = {
@@ -23,18 +25,17 @@ const ProductList = ({ products, color_palette }) => {
       {Object.keys(products).map((category, index) => {
         return (
           <div
-            className="flex flex-col rounded-xl py-5 font-bold"
+            className="flex mx-2 flex-col rounded-xl py-2 font-bold border-2 border-white border-solid drop-shadow-lg"
             key={index}
             style={{
               backgroundColor: color_palette[index]
                 ? color_palette[index]
                 : color_palette[index / color_palette.length],
-              boxShadow: "inset 0 0 0 0.4rem white",
             }}
           >
             {/* first letter uppercase */}
-            <p className="text-2xl mb-4 px-8 py-2 bg-white w-max rounded-r-xl">
-              {category.charAt(0).toUpperCase() + category.slice(1)}
+            <p className="text-2xl mb-4 px-8 py-2 bg-white w-max rounded-r-xl first-letter:uppercase">
+              {category}
             </p>
 
             <div className="flex w-full">
@@ -48,6 +49,7 @@ const ProductList = ({ products, color_palette }) => {
                 autoplayTimeout={6000}
                 responsive={responsive}
                 stagePadding={100}
+                lazyLoad={true}
               >
                 {products[category].map((product) => {
                   return <ProductCard key={product.id} product={product} />;
