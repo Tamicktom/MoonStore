@@ -1,22 +1,18 @@
 //* Libraries imports
 import OwlCarousel from "react-owl-carousel";
+import 'owl.carousel/dist/assets/owl.carousel.css';
+import 'owl.carousel/dist/assets/owl.theme.default.css';
 
 //* Components Imports
 import ProductCard from "../../../components/ProductCard/ProductCard";
 
 const responsive = {
   0: {
-    items: 1,
-  },
-  480: {
-    items: 1,
-  },
-  1030: {
     items: 2,
   },
-  1360: {
+  500: {
     items: 3,
-  },
+  }
 };
 
 const ProductList = ({ products, color_palette }) => {
@@ -33,10 +29,9 @@ const ProductList = ({ products, color_palette }) => {
                 : color_palette[index / color_palette.length],
             }}
           >
-            {/* first letter uppercase */}
-            <p className="text-2xl mb-4 px-8 py-2 bg-white w-max rounded-r-xl first-letter:uppercase">
+            <h2 className="text-2xl mb-4 px-8 py-2 bg-white w-max rounded-r-xl first-letter:uppercase">
               {category}
-            </p>
+            </h2>
 
             <div className="flex w-full">
               <OwlCarousel
@@ -48,7 +43,9 @@ const ProductList = ({ products, color_palette }) => {
                 autoplay={true}
                 autoplayTimeout={6000}
                 responsive={responsive}
-                stagePadding={100}
+                stagePadding={0}
+                cellPadding={0}
+                margin={0}
                 lazyLoad={true}
               >
                 {products[category].map((product) => {
@@ -59,9 +56,6 @@ const ProductList = ({ products, color_palette }) => {
           </div>
         );
       })}
-      {/* {products.map((product) => (
-        <ProductCard key={product.id} product={product} />
-      ))} */}
     </div>
   );
 };
