@@ -38,12 +38,9 @@ const LandingPage = () => {
   }, []);
 
   return (
-    <div className="relative" style={{ width: "100%" }}>
+    <div className="relative w-screen flex flex-col items-center">
       <Header />
-      <div className="grid grid-cols-1 lg:grid-cols-[20%_80%] container mx-auto mt-[10rem] md:mt-[20rem] ">
-        <div className="hidden lg:block">
-          <Categories {...{ categories }} />
-        </div>
+      <div className="bg-white w-full max-w-7xl px-5 py-10 pb-24">
         <ProductList {...{ products, color_palette }} />
       </div>
       <Footer />
