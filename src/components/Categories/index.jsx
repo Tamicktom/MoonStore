@@ -7,7 +7,6 @@ const Categories = () => {
         background: 'rgba(255,0,0,0.5)',
       }}
     >
-      a
     </div>
   )
 }

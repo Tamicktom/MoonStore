@@ -1,20 +1,21 @@
-import { useEffect, useState } from "react";
+//* Libraries imports
 import OwlCarousel from "react-owl-carousel";
+import 'owl.carousel/dist/assets/owl.carousel.css';
+import 'owl.carousel/dist/assets/owl.theme.default.css';
+
+//* Components Imports
 import ProductCard from "../../../components/ProductCard/ProductCard";
 
 const responsive = {
   0: {
-    items: 1,
-  },
-  480: {
-    items: 1,
-  },
-  1030: {
     items: 2,
   },
-  1360: {
+  500: {
     items: 3,
   },
+  1000: {
+    items: 4,
+  }
 };
 
 const landing_page_style = [
@@ -37,7 +38,6 @@ const ProductList = ({ products, color_palette }) => {
               backgroundColor: color_palette[index]
                 ? color_palette[index]
                 : color_palette[index / color_palette.length],
-              boxShadow: "inset 0 0 0 0.4rem white",
             }}
           >
             {/* first letter uppercase */}
@@ -55,7 +55,10 @@ const ProductList = ({ products, color_palette }) => {
                 autoplay={true}
                 autoplayTimeout={6000}
                 responsive={responsive}
-                stagePadding={100}
+                stagePadding={0}
+                cellPadding={0}
+                margin={0}
+                lazyLoad={true}
               >
                 {products[category].map((product) => {
                   return <ProductCard key={product.id} product={product} />;
@@ -65,9 +68,6 @@ const ProductList = ({ products, color_palette }) => {
           </div>
         );
       })}
-      {/* {products.map((product) => (
-        <ProductCard key={product.id} product={product} />
-      ))} */}
     </div>
   );
 };
