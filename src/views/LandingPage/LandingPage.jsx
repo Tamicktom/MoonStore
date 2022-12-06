@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import Categories from "../../components/Categories";
 import { Footer } from "../../components/Footer/Footer";
+import Navbar from "../../components/Navbar/Navbar";
 import Header from "./Header";
 import ProductList from "./ProductList";
 
@@ -15,6 +17,7 @@ const LandingPage = () => {
   ];
 
   const color_palette = ["#ffe5e0", "#f7bfcc", "#e8b0d3", "#b6b1d8", "#90c9ff"];
+  const { category_param } = useParams();
 
   const [products, setProducts] = useState([]);
 
@@ -38,12 +41,8 @@ const LandingPage = () => {
   }, []);
 
   return (
-    <div className="relative w-screen flex flex-col items-center">
-      <Header />
-      <div className="bg-white w-full max-w-7xl px-5 py-10 pb-24">
-        <ProductList {...{ products, color_palette }} />
-      </div>
-      <Footer />
+    <div className="w-full max-w-7xl rounded-3xl mt-[10rem] mx-auto">
+      <ProductList {...{ products, color_palette, category_param }} />
     </div>
   );
 };

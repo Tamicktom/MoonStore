@@ -4,7 +4,6 @@ import { Star, ShareNetwork, Heart, ArchiveBox, ShoppingCart, FileText } from "p
 import { useParams } from "react-router-dom";
 
 //* Components imports
-import { Footer } from "../../components/Footer/Footer";
 
 export default function ProductView() {
   const [product, setProduct] = useState({
@@ -18,6 +17,7 @@ export default function ProductView() {
   });
   const [loading, setLoading] = useState(true);
   const { id } = useParams();
+  const color_palette = ["#ffe5e0", "#f7bfcc", "#e8b0d3", "#b6b1d8", "#90c9ff"];
 
   useEffect(() => {
     fetch('https://dummyjson.com/products/' + id)
@@ -31,10 +31,10 @@ export default function ProductView() {
   }, [product]);
 
   return (
-    <div className="flex flex-col items-center w-screen">
-      <div className="w-full max-w-7xl min-h-screen pt-[72px] pb-10 bg-white">
+    <div className="flex flex-col items-center w-screen mt-[10rem]">
+      <div className="w-full max-w-7xl rounded-3xl">
         {/* mobile */}
-        <main className="flex flex-col items-center w-full gap-4 px-4 bg-white lg:hidden">
+        <main className="flex flex-col items-center w-full gap-4 px-4 py-10 bg-white lg:hidden">
           {!loading &&
             (<>
               <ProductName name={product.title} />
@@ -47,7 +47,7 @@ export default function ProductView() {
         </main>
 
         {/* desktop */}
-        <main className="flex-row items-start hidden w-full h-full px-4 py-5 bg-white lg:flex">
+        <main className="flex-row items-start hidden w-full h-full p-8 bg-white lg:flex rounded-3xl">
           {!loading &&
             (<>
               <div className='flex flex-col items-center justify-center w-6/12 pr-2'>
@@ -63,7 +63,6 @@ export default function ProductView() {
           }
         </main>
       </div>
-      <Footer />
     </div>
   );
 }

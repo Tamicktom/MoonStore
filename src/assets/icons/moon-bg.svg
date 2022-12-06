@@ -1,8 +1,8 @@
 <svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
-	<title>moon-svg</title>
+	<title>moon 2</title>
 	<defs>
 		<linearGradient id="g1" x1="0" y1="19" x2="200" y2="181" gradientUnits="userSpaceOnUse">
-			<stop offset="0" stop-color="#454777"/>
+			<stop offset="0" stop-color="#ffcdaa"/>
 			<stop offset="1" stop-color="#f3779b"/>
 		</linearGradient>
 	</defs>

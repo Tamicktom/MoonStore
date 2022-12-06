@@ -8,33 +8,53 @@ import ProductCard from "../../../components/ProductCard/ProductCard";
 
 const responsive = {
   0: {
+    items: 1,
+  },
+  580: {
     items: 2,
   },
-  500: {
+  740: {
     items: 3,
   },
-  1000: {
+  900: {
     items: 4,
-  }
+  },
+  1030: {
+    items: 2,
+  },
+  1360: {
+    items: 3,
+  },
 };
 
-const ProductList = ({ products, color_palette }) => {
+const landing_page_style = [
+  "flex",
+  "flex-col",
+  "rounded-xl",
+  "py-5",
+  "font-bold",
+];
+
+const ProductList = ({ products, color_palette, category_param }) => {
   return (
-    <div className="flex flex-col gap-10">
+    <div className="flex flex-col gap-10 min-h-screen">
       {Object.keys(products).map((category, index) => {
+        if (category_param && category_param !== category) return null;
         return (
           <div
-            className="flex mx-2 flex-col rounded-xl py-2 font-bold border-2 border-white border-solid drop-shadow-lg"
+            className={landing_page_style.join(" ")}
             key={index}
             style={{
               backgroundColor: color_palette[index]
                 ? color_palette[index]
                 : color_palette[index / color_palette.length],
+              boxShadow: "inset 0 0 0 0.4rem white",
             }}
           >
-            <h2 className="text-2xl mb-4 px-8 py-2 bg-white w-max rounded-r-xl first-letter:uppercase">
-              {category}
-            </h2>
+            {/* first letter uppercase */}
+            <p className="text-2xl mb-[0.25rem] px-8 py-2 bg-white w-full text-center rounded-r-xl">
+              {category.charAt(0).toUpperCase() + category.slice(1)}
+            </p>
 
             <div className="flex w-full">
               <OwlCarousel
@@ -43,13 +63,10 @@ const ProductList = ({ products, color_palette }) => {
                 dots={false}
                 nav={false}
                 center
-                autoplay={true}
-                autoplayTimeout={6000}
+                // autoplay={true}
+                // autoplayTimeout={6000}
                 responsive={responsive}
-                stagePadding={0}
-                cellPadding={0}
-                margin={0}
-                lazyLoad={true}
+                stagePadding={100}
               >
                 {products[category].map((product) => {
                   return <ProductCard key={product.id} product={product} />;

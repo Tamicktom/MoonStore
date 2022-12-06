@@ -10,7 +10,11 @@ const ProductCard = ({ product }) => {
 
   return (
     <Link to={`/product/${id}`} key={id}>
-      <div className="flex flex-col lg:w-80 lg:h-[512px] w-40 h-64 rounded-xl bg-white/75 backdrop-blur-md border-2 border-white border-solid my-4">
+      <div className="flex flex-col lg:w-80 lg:h-[512px] w-40 h-64 rounded-xl bg-white/75 backdrop-blur-md border-2 border-white border-solid my-4"
+        style={{
+          boxShadow: '0 0 0 0.35rem white'
+        }}
+      >
         <div className="h-full flex items-start overflow-hidden rounded-lg">
           <img
             className="object-cover h-full"
