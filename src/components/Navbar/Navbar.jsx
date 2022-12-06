@@ -12,7 +12,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="fixed left-1/2 transform -translate-x-1/2 max-w-7xl w-full flex justify-between bg-white rounded-full z-20 shadow-lg">
+    <nav className="fixed left-1/2 transform -translate-x-1/2 max-w-7xl w-full flex justify-between bg-white rounded-full z-20 shadow-md">
       {/* logo here */}
       <Link to={`/`}>
         <div className="flex items-center gap-3 hover:bg-[#fcecf4] p-3 rounded-l-full cursor-pointer">
