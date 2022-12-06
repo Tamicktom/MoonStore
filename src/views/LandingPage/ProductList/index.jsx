@@ -17,13 +17,21 @@ const responsive = {
   },
 };
 
+const landing_page_style = [
+  "flex",
+  "flex-col",
+  "rounded-xl",
+  "py-5",
+  "font-bold",
+];
+
 const ProductList = ({ products, color_palette }) => {
   return (
     <div className="flex flex-col gap-10">
       {Object.keys(products).map((category, index) => {
         return (
           <div
-            className="flex flex-col rounded-xl py-5 font-bold"
+            className={landing_page_style.join(" ")}
             key={index}
             style={{
               backgroundColor: color_palette[index]
@@ -33,7 +41,7 @@ const ProductList = ({ products, color_palette }) => {
             }}
           >
             {/* first letter uppercase */}
-            <p className="text-2xl mb-4 px-8 py-2 bg-white w-max rounded-r-xl">
+            <p className="text-2xl mb-[0.85rem] px-8 py-2 bg-white w-max rounded-r-xl">
               {category.charAt(0).toUpperCase() + category.slice(1)}
             </p>
 
